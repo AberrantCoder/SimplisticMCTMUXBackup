@@ -14,19 +14,15 @@ tmux_input()
     echo 'Inputting into TMUX session'
     sleep $REST_TIME
 }
-
-
 announce () {
    tmux_input "say $1"
    sleep $REST_TIME
 }
-
 save_all () {
    tmux_input "save-all"
    echo 'save_all() called'
    sleep $REST_TIME
 }
-
 stop_server () {
    tmux_input "stop"
    echo 'stop_server() called'
@@ -38,25 +34,20 @@ backup() {
     echo 'backup() called'
     sleep $REST_TIME
 }
-
 start_server () {
    tmux_input "sh $MC_RUNNABLE"
    echo "start_server($MC_RUNNABLE) called"
    sleep $REST_TIME
 }
-
 case "$1" in
-
  backup)
   announce "Server restart will begin in $REST_TIME seconds..."
   save_all
   stop_server
   backup
   start_server
-;;
-
+ ;;
  announce)
   tmux_input "say $2" # usage e.g: crontab -e -> */5 * * * * /var/papermc/cronscript.sh announce "This 1 lines replaces a 250kb plugin :>)"
-;;
-
+ ;;
 esac
