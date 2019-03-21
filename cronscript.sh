@@ -1,5 +1,4 @@
 #!/bin/bash
-
 MC_DIR="/var/papermc"
 BACKUP_DIR="${MC_DIR}/backup"
 MC_WORLD="${MC_DIR}/world"
@@ -7,7 +6,6 @@ MC_RUNNABLE="${MC_DIR}/start.sh"
 TMUX_ID="moparcraft"
 REST_TIME=5
 DT=$(date '+%Y-%m-%d %H:%M:%S');
-
 tmux_input()
 {
     tmux send -t $TMUX_ID "$1" ENTER 
@@ -28,7 +26,6 @@ stop_server () {
    echo 'stop_server() called'
    sleep $REST_TIME
 }
-
 backup() {
     zip -9 -r $BACKUP_DIR/$DT.zip "${MC_WORLD}_nether" "${MC_WORLD}_the_end" "$MC_WORLD"
     echo 'backup() called'
