@@ -45,6 +45,6 @@ case "$1" in
   start_server
  ;;
  announce)
-  tmux_input "say $2" # usage e.g: crontab -e -> */5 * * * * /var/papermc/cronscript.sh announce "This 1 lines replaces a 250kb plugin :>)"
+  announce "$2" # usage e.g: crontab -e -> */5 * * * * /var/papermc/cronscript.sh announce "This 1 lines replaces a 250kb plugin :>)"
  ;;
 esac
